@@ -5,13 +5,13 @@
         <div class="row align-items-center">
 
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Photon</a></h1>
+            <h1 class="mb-0"><nuxt-link to="/" class="text-black h2 mb-0">Photon</nuxt-link></h1>
           </div>
           <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="active"><a href="index.html">Home</a></li>
+                <li class="active"><nuxt-link to="/" class="text-black h2 mb-0">Home</nuxt-link></li>
                 <li class="has-children">
                   <a href="single.html">Gallery</a>
                   <ul class="dropdown">
@@ -33,8 +33,8 @@
                   </ul>
                 </li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><nuxt-link to="/about">About</nuxt-link> </li>
+                <li> <nuxt-link to="/contact">Contact</nuxt-link></li>
               </ul>
             </nav>
           </div>
