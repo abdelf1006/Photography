@@ -1,9 +1,13 @@
 <template>
-  <div>
-    <Header />
-    <nuxt />
-    <Footer />
-  </div>
+  <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+    <template>
+      <div>
+        <Header />
+        <nuxt />
+        <Footer />
+      </div>
+    </template>
+  </transition>
 </template>
 
 <script>
@@ -16,3 +20,8 @@ export default {
   }
 };
 </script>
+<style >
+.nuxt-link-exact-active {
+  font-weight: 700;
+}
+</style>

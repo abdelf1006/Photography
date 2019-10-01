@@ -67,6 +67,18 @@
 </style>
 <script>
 export default {
+  head() {
+    return {
+      title: "Phtography",
+      meta: [
+        {
+          hid: "Adane fouham",
+          name: "Adane fouham",
+          content: "Adane fouham"
+        }
+      ]
+    };
+  },
   data() {
     return {
       currentOffset: 0,

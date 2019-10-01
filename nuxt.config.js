@@ -19,10 +19,15 @@ export default {
       }
     ],
     link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }]
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css'
+      },
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -34,7 +39,9 @@ export default {
    ** Global CSS
    */
   css: [
-    './assets/style/style.css'
+    './assets/style/style.css',
+    './assets/font/flaticon/font/flaticon.css',
+
   ],
   /*
    ** Plugins to load before mounting the App
