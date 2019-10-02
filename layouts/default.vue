@@ -1,13 +1,12 @@
 <template>
-  <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-    <template>
-      <div>
-        <Header />
-        <nuxt />
-        <Footer />
-      </div>
-    </template>
-  </transition>
+  <div>
+    <Header />
+    <div class="site-wrap">
+      <SideBarMobile />
+      <nuxt />
+      <Footer />
+    </div>
+  </div>
 </template>
 
 <script>

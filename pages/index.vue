@@ -1,53 +1,51 @@
 <template>
-  <div class="site-wrap">
-    <div class="card-carousel-wrapper">
-      <div class="card-carousel--nav__left" @click="moveCarousel(-1)" :disabled="atHeadOfList"></div>
-      <div class="card-carousel">
-        <div class="card-carousel--overflow-container">
-          <div
-            class="card-carousel-cards"
-            :style="{ transform: 'translateX' + '(' + currentOffset + 'px' + ')'}"
-          >
-            <div class="col-4">
-              <div class="image-wraper">
-                <img src="~/assets/images/img_1.jpg" class="full-image" />
-              </div>
+  <div class="card-carousel-wrapper">
+    <div class="card-carousel--nav__left" @click="moveCarousel(-1)" :disabled="atHeadOfList"></div>
+    <div class="card-carousel">
+      <div class="card-carousel--overflow-container">
+        <div
+          class="card-carousel-cards"
+          :style="{ transform: 'translateX' + '(' + currentOffset + 'px' + ')'}"
+        >
+          <div class="col-lg-4 col-12">
+            <div class="image-wraper">
+              <img src="~/assets/images/img_1.jpg" class="full-image" />
             </div>
-            <div class="col-4">
-              <div class="image-wraper">
-                <img src="~/assets/images/img_2.jpg" class="full-image" />
-              </div>
+          </div>
+          <div class="col-lg-4 col-12">
+            <div class="image-wraper">
+              <img src="~/assets/images/img_2.jpg" class="full-image" />
             </div>
-            <div class="col-4">
-              <div class="image-wraper">
-                <img src="~/assets/images/img_3.jpg" class="full-image" />
-              </div>
+          </div>
+          <div class="col-lg-4 col-12">
+            <div class="image-wraper">
+              <img src="~/assets/images/img_3.jpg" class="full-image" />
             </div>
-            <div class="col-4">
-              <div class="image-wraper">
-                <img src="~/assets/images/img_4.jpg" class="full-image" />
-              </div>
+          </div>
+          <div class="col-lg-4 col-12">
+            <div class="image-wraper">
+              <img src="~/assets/images/img_4.jpg" class="full-image" />
             </div>
-            <div class="col-4">
-              <div class="image-wraper">
-                <img src="~/assets/images/img_5.jpg" class="full-image" />
-              </div>
+          </div>
+          <div class="col-lg-4 col-12">
+            <div class="image-wraper">
+              <img src="~/assets/images/img_5.jpg" class="full-image" />
             </div>
-            <div class="col-4">
-              <div class="image-wraper">
-                <img src="~/assets/images/img_6.jpg" class="full-image" />
-              </div>
+          </div>
+          <div class="col-lg-4 col-12">
+            <div class="image-wraper">
+              <img src="~/assets/images/img_6.jpg" class="full-image" />
             </div>
-            <div class="col-4">
-              <div class="image-wraper">
-                <img src="~/assets/images/img_7.jpg" class="full-image" />
-              </div>
+          </div>
+          <div class="col-lg-4 col-12">
+            <div class="image-wraper">
+              <img src="~/assets/images/img_7.jpg" class="full-image" />
             </div>
           </div>
         </div>
       </div>
-      <div class="card-carousel--nav__right" @click="moveCarousel(1)" :disabled="atEndOfList"></div>
     </div>
+    <div class="card-carousel--nav__right" @click="moveCarousel(1)" :disabled="atEndOfList"></div>
   </div>
 </template>
 <style>
@@ -84,6 +82,10 @@ export default {
       currentOffset: 0,
       windowSize: 3,
       paginationFactor: 500,
+      window: {
+        width: 0,
+        height: 0
+      },
       items: [
         { name: "Tycoon Thai", tag: "Thai" },
         { name: "Ippudo", tag: "Japanese" },
@@ -94,6 +96,17 @@ export default {
         { name: "Salt and Straw", tag: "Ice cream" }
       ]
     };
+  },
+  mounted() {
+    if (process.client) {
+      window.addEventListener("resize", this.handleResize);
+      this.handleResize();
+    }
+  },
+  destroyed() {
+    if (process.client) {
+      document.removeEventListener("resize", this.myEventHandler());
+    }
   },
   computed: {
     atEndOfList() {
@@ -107,8 +120,17 @@ export default {
     }
   },
   methods: {
+    handleResize() {
+      this.currentOffset = 0;
+      if (window.innerWidth <= 988) {
+        this.windowSize = 1;
+        this.paginationFactor = window.innerWidth - 82;
+      } else {
+        this.windowSize = 3;
+        this.paginationFactor = (window.innerWidth * 33.33) / 100 - 30;
+      }
+    },
     moveCarousel(direction) {
-      // Find a more elegant way to express the :style. consider using props to make it truly generic
       if (direction === 1 && !this.atEndOfList) {
         this.currentOffset -= this.paginationFactor;
       } else if (direction === -1 && !this.atHeadOfList) {

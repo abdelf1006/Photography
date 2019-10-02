@@ -1,5 +1,5 @@
 <template>
-  <header class="site-navbar py-3" role="banner">
+  <header class="site-navbar py-3 animated slideInDown" role="banner">
     <div class="container-fluid">
       <div class="row align-items-center">
         <div class="col-6 col-xl-2" data-aos="fade-down">
@@ -60,7 +60,6 @@
               </li>
             </ul>
           </div>
-
           <div
             class="d-inline-block d-xl-none ml-md-0 mr-auto py-3"
             style="position: relative; top: 3px;"
@@ -69,8 +68,44 @@
               <span class="icon-menu h3"></span>
             </a>
           </div>
+          <div
+            class="d-inline-block d-xl-none ml-md-0 mr-auto py-3"
+            style="position: relative; top: 3px;"
+          >
+            <a @click="toggleSideBar()" class="site-menu-toggle js-menu-toggle text-black">
+              <span class="icon-menu h3"></span>
+              rger
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </header>
 </template>
+<script>
+export default {
+  mounted() {
+    if (process.client) {
+      window.addEventListener("resize", this.handleResize);
+      this.handleResize();
+    }
+  },
+  destroyed() {
+    if (process.client) {
+      document.removeEventListener("resize", this.myEventHandler());
+    }
+  },
+  methods: {
+    handleResize() {
+      if (window.innerWidth >= 1197) {
+        document.body.classList.remove("offcanvas-menu");
+      }
+    },
+    toggleSideBar() {
+      if (process.client) {
+        document.body.classList.toggle("offcanvas-menu");
+      }
+    }
+  }
+};
+</script>
