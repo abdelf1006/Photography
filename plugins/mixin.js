@@ -8,7 +8,7 @@ Vue.mixin({
     if (process.client) {
       const listener = e => {
         if (
-          this.$el.contains(e.target) || e.target.classList.contains("site-menu-toggle")
+          this.$el.contains(e.target) || e.target.classList.contains("icon-menu")
         ) {
           return;
         }

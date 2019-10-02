@@ -41,6 +41,7 @@ export default {
   css: [
     './assets/style/style.css',
     './assets/font/flaticon/font/flaticon.css',
+    './assets/font/icomoon/style.css'
 
   ],
   /*

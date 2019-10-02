@@ -1,7 +1,7 @@
 <template>
   <div class="card-carousel-wrapper">
     <div class="card-carousel--nav__left" @click="moveCarousel(-1)" :disabled="atHeadOfList"></div>
-    <div class="card-carousel">
+    <div class="card-carousel animated slideInRight">
       <div class="card-carousel--overflow-container">
         <div
           class="card-carousel-cards"
@@ -105,7 +105,7 @@ export default {
   },
   destroyed() {
     if (process.client) {
-      document.removeEventListener("resize", this.myEventHandler());
+      document.removeEventListener("resize", this.handleResize());
     }
   },
   computed: {
