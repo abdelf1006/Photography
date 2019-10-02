@@ -12,46 +12,36 @@
           <div class="row">
             <div class="col-lg-8 mb-5">
               <form name="contact" method="POST" data-netlify="true">
-                <div class="row form-group animated slideInLeft">
-                  <div class="col-md-12">
-                    <label class="text-black" for="naming">Name</label>
-                    <input type="text" name="naming" class="form-control" required />
-                  </div>
-                </div>
-                <div class="row form-group animated slideInRight">
-                  <div class="col-md-12">
-                    <label class="text-black" for="email">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" required />
-                  </div>
-                </div>
+                <p class="row form-group animated slideInLeft">
+                  <label class="text-black" for="naming">Name</label>
+                  <input type="text" name="naming" class="form-control" required />
+                </p>
+                <p class="row form-group animated slideInRight">
+                  <label class="text-black" for="email">Email</label>
+                  <input type="email" name="email" id="email" class="form-control" required />
+                </p>
 
-                <div class="row form-group animated slideInLeft">
-                  <div class="col-md-12">
-                    <label class="text-black" for="subject">Subject</label>
-                    <input type="subject" name="subject" id="subject" class="form-control" required />
-                  </div>
-                </div>
-                <div class="row form-group animated slideInRight">
-                  <div class="col-md-12">
-                    <label class="text-black" for="message">Message</label>
-                    <textarea
-                      name="message"
-                      id="message"
-                      cols="30"
-                      rows="7"
-                      class="form-control"
-                      placeholder="Write your notes or questions here..."
-                      required
-                    ></textarea>
-                  </div>
-                </div>
+                <p class="row form-group animated slideInLeft">
+                  <label class="text-black" for="subject">Subject</label>
+                  <input type="subject" name="subject" id="subject" class="form-control" required />
+                </p>
+                <p class="row form-group animated slideInRight">
+                  <label class="text-black" for="message">Message</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    cols="30"
+                    rows="7"
+                    class="form-control"
+                    placeholder="Write your notes or questions here..."
+                    required
+                  ></textarea>
+                </p>
                 <div data-netlify-recaptcha="true"></div>
 
-                <div class="row form-group animated slideInLeft">
-                  <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary py-2 px-4 text-white">Send</button>
-                  </div>
-                </div>
+                <p class="row form-group animated slideInLeft">
+                  <button type="submit" class="btn btn-primary py-2 px-4 text-white">Send</button>
+                </p>
               </form>
             </div>
             <div class="col-lg-3 ml-auto animated slideInDown">
