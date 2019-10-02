@@ -14,8 +14,8 @@
               <form name="contact" method="POST" data-netlify="true">
                 <div class="row form-group animated slideInLeft">
                   <div class="col-md-12">
-                    <label class="text-black" for="fname">Name</label>
-                    <input type="text" name="name" class="form-control" required />
+                    <label class="text-black" for="naming">Name</label>
+                    <input type="text" name="naming" class="form-control" required />
                   </div>
                 </div>
                 <div class="row form-group animated slideInRight">
